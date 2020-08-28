@@ -12,6 +12,7 @@
 
     <modules>
         <module>sales</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
