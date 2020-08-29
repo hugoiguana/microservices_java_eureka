@@ -19,12 +19,13 @@
 		<java.version>11</java.version>
 	</properties>
 
-<!--	<dependencies>
+-	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<groupId>microservices.java.eureka</groupId>
+			<artifactId>core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-	</dependencies>-->
+	</dependencies>
 
 	<build>
 		<finalName>sales</finalName>
