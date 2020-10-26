@@ -22,6 +22,11 @@ import javax.validation.constraints.NotNull;
 })
 public class ApplicationUser extends AbstractEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private Long id;
+
     @NotNull(message = "The field 'username' is mandatory")
     @Column(name = "usu_name", nullable = false)
     private String userName;
@@ -37,7 +42,7 @@ public class ApplicationUser extends AbstractEntity {
     private String role = "USER";
 
     public ApplicationUser(@NotNull ApplicationUser applicationUser) {
-        super.setId(applicationUser.getId());
+        this.setId(applicationUser.getId());
         this.userName = applicationUser.getUserName();
         this.password = applicationUser.getPassword();
         this.role = applicationUser.getRole();

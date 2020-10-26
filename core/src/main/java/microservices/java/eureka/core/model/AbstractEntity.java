@@ -17,11 +17,6 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Long id;
-
     @Column(nullable = false)
     private LocalDateTime dtCriation;
 
