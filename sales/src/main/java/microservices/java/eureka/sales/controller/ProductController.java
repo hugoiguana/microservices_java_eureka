@@ -15,7 +15,7 @@ import java.util.List;
 @CrossOrigin
 public class ProductController {
 
-    @GetMapping(value = "")
+    @GetMapping
     public ResponseEntity<List<Product>> products() {
 
         Product product1 = Product.builder().name("product A").build();
