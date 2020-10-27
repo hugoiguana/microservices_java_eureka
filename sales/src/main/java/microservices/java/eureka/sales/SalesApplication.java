@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EntityScan({"microservices.java.eureka.core.model"})
-@EnableJpaRepositories({"microservices.java.eureka.core.repository"})
+@EntityScan({"microservices.java.eureka.sales.model"})
+@EnableJpaRepositories({"microservices.java.eureka.sales.repository"})
 @ComponentScan("microservices.java.eureka")
 @SpringBootApplication
 public class SalesApplication {

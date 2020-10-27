@@ -1,4 +1,4 @@
-package microservices.java.eureka.core.model;
+package microservices.java.eureka.sales.model;
 
 import lombok.*;
 

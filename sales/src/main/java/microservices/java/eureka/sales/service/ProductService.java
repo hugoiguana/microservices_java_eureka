@@ -1,4 +1,4 @@
-package microservices.java.eureka.core.service;
+package microservices.java.eureka.sales.service;
 
 import org.springframework.stereotype.Component;
 

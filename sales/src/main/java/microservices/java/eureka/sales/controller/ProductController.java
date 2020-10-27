@@ -1,6 +1,6 @@
 package microservices.java.eureka.sales.controller;
 
-import microservices.java.eureka.core.model.Product;
+import microservices.java.eureka.sales.model.Product;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
