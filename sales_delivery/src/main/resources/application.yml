@@ -1,0 +1,35 @@
+server:
+  port: 8083
+
+  # Data Base configuration
+spring:
+  application:
+    name: sales_delivery
+  datasource:
+    url: jdbc:postgresql://127.0.0.1/microservices_java_delivery
+    username: hugoiguana
+    password: 1234
+    platform: org.hibernate.dialect.PostgreSQLDialect
+    hikari:
+      pool-name: SpringBootMysqlPool
+      connection-test-query: select now();
+      maximum-pool-size: 5
+      minimum-idle: 1
+      connection-timeout: 20000
+      idle-timeout: 10000
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka/
+    register-with-eureka: true

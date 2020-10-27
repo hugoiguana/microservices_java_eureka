@@ -2,6 +2,7 @@ package microservices.java.eureka.sales.model;
 
 
 import lombok.*;
+import microservices.java.eureka.core.model.AbstractEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

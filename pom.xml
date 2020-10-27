@@ -23,6 +23,7 @@
         <module>core</module>
         <module>auth</module>
         <module>discovery</module>
+        <module>sales_delivery</module>
     </modules>
 
     <properties>
