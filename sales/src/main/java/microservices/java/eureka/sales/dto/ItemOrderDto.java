@@ -1,4 +1,4 @@
-package microservices.java.eureka.core.dto;
+package microservices.java.eureka.sales.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeliveryDto {
+public class ItemOrderDto {
 
-    private Long orderId;
-    private AddressDto address;
+    private Integer quantity;
+
+    private Long productId;
 }

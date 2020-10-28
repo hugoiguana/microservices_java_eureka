@@ -34,10 +34,14 @@ public class SecutiryConfiguration extends WebSecurityConfigurerAdapter {
 
     private static final String[] PUBLIC_MATCHERS_GET = {
             "/products/**",
+            "/sales/**",
+            "/deliveries/**",
     };
 
     private static final String[] PUBLIC_MATCHERS_POST = {
             "/products/**",
+            "/sales/**",
+            "/deliveries/**",
     };
 
     @Override

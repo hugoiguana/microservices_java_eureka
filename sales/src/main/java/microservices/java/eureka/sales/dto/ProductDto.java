@@ -1,16 +1,18 @@
-package microservices.java.eureka.core.dto;
+package microservices.java.eureka.sales.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class DeliveryDto {
+public class ProductDto {
 
-    private Long orderId;
-    private AddressDto address;
+    private String name;
+    private BigDecimal price;
 }

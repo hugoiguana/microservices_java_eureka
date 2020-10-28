@@ -12,7 +12,7 @@
     <artifactId>sales_delivery</artifactId>
     <version>1.0.0</version>
     <name>sales_delivery</name>
-    <description>The sales delivery module</description>
+    <description>The microservices.java.eureka.sales.delivery microservices.java.eureka.sales.delivery module</description>
 
     <properties>
         <java.version>11</java.version>
@@ -35,12 +35,12 @@
         <dependency>
             <groupId>microservices.java.eureka</groupId>
             <artifactId>core</artifactId>
-            <version>1.0.5</version>
+            <version>1.0.10</version>
         </dependency>
         <dependency>
             <groupId>microservices.java.eureka</groupId>
             <artifactId>auth</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>

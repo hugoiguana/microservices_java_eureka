@@ -1,19 +1,19 @@
 package microservices.java.eureka.sales.model;
 
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import microservices.java.eureka.core.model.AbstractEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Getter
-@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "usu_user")
 @AttributeOverrides({
@@ -25,28 +25,38 @@ public class ApplicationUser extends AbstractEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+    @Column(name = "usu_id", nullable = false)
     private Long id;
 
     @NotNull(message = "The field 'username' is mandatory")
     @Column(name = "usu_name", nullable = false)
     private String userName;
 
-    @NotNull(message = "The field 'password' is mandatory")
-    @ToString.Exclude
-    @Column(name = "usu_password", nullable = false)
-    private String password;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "add_id")
+    private Address address;
 
-    @NotNull(message = "The field 'role' is mandatory")
-    @Builder.Default
-    @Column(name = "usu_role", nullable = false)
-    private String role = "USER";
-
-    public ApplicationUser(@NotNull ApplicationUser applicationUser) {
-        this.setId(applicationUser.getId());
-        this.userName = applicationUser.getUserName();
-        this.password = applicationUser.getPassword();
-        this.role = applicationUser.getRole();
+    public Long getId() {
+        return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 }

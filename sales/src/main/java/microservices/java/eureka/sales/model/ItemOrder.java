@@ -1,14 +1,17 @@
 package microservices.java.eureka.sales.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import microservices.java.eureka.core.model.AbstractEntity;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "ito_item_order")
 @AttributeOverrides({
@@ -24,6 +27,10 @@ public class ItemOrder extends AbstractEntity {
 
     @Column(name = "pro_quantity", nullable = false)
     private Integer quantity;
+
+    @ManyToOne
+    @JoinColumn(name = "ord_id")
+    private Order order;
 
     @OneToOne
     @JoinColumn(name="prd_id")
@@ -43,6 +50,14 @@ public class ItemOrder extends AbstractEntity {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public Product getProduct() {

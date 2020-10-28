@@ -1,7 +1,7 @@
 
 
 #Endpoints:
-GET: http://localhost:8080/gateway/sales/products
+GET: http://localhost:8080/gateway/microservices.java.eureka.sales.delivery/products
 GET: http://localhost:8082/products
 
 

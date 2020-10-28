@@ -1,12 +1,12 @@
 server:
-  port: 8083
+  port: 8082
 
   # Data Base configuration
 spring:
   application:
-    name: delivery
+    name: sales
   datasource:
-    url: jdbc:postgresql://127.0.0.1/microservices_java_delivery
+    url: jdbc:postgresql://127.0.0.1/microservices_java
     username: hugoiguana
     password: 1234
     platform: org.hibernate.dialect.PostgreSQLDialect
@@ -33,3 +33,9 @@ eureka:
     service-url:
       defaultZone: http://localhost:8081/eureka/
     register-with-eureka: true
+
+endpoint:
+  gateway:
+    host: localhost
+    port: 8080
+    sales_delivery: http://${endpoint.gateway.host}:${endpoint.gateway.port}/gateway/delivery/deliveries

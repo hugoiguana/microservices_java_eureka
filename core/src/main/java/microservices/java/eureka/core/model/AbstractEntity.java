@@ -1,16 +1,12 @@
 package microservices.java.eureka.core.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.PrePersist;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @MappedSuperclass
 public class AbstractEntity implements Serializable {
 
@@ -36,6 +32,7 @@ public class AbstractEntity implements Serializable {
         this.dtModification = dtModification;
     }
 
+    @PrePersist
     public void prePersist() {
         dtCriation = LocalDateTime.now();
         dtModification = LocalDateTime.now();

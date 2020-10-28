@@ -1,15 +1,13 @@
-package sales.model;
+package microservices.java.eureka.delivery.model;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import microservices.java.eureka.core.model.AbstractEntity;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
 @EqualsAndHashCode(callSuper = true)
 @Entity

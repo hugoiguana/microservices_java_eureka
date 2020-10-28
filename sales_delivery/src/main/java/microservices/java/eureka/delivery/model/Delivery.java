@@ -1,15 +1,13 @@
-package sales.model;
+package microservices.java.eureka.delivery.model;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import microservices.java.eureka.core.model.AbstractEntity;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @ToString
 @EqualsAndHashCode(callSuper = true)
 @Entity
@@ -28,6 +26,9 @@ public class Delivery extends AbstractEntity {
     @Column(name = "dlv_order_id")
     private Long orderId;
 
+    @OneToOne(mappedBy = "delivery", cascade = CascadeType.PERSIST)
+    private DeliveryAddress address;
+
     public Long getId() {
         return id;
     }
@@ -44,4 +45,11 @@ public class Delivery extends AbstractEntity {
         this.orderId = orderId;
     }
 
+    public DeliveryAddress getAddress() {
+        return address;
+    }
+
+    public void setAddress(DeliveryAddress address) {
+        this.address = address;
+    }
 }

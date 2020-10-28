@@ -1,6 +1,9 @@
 package microservices.java.eureka.sales.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import microservices.java.eureka.core.model.AbstractEntity;
 
 import javax.persistence.*;
@@ -11,7 +14,6 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "ord_order")
 @AttributeOverrides({
@@ -29,8 +31,7 @@ public class Order extends AbstractEntity {
     @JoinColumn(name = "usu_id")
     private ApplicationUser customer;
 
-    @OneToMany
-    @JoinColumn(name = "ito_id")
+    @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST)
     private Set<ItemOrder> items = new HashSet<>();
 
     public Long getId() {
@@ -54,6 +55,16 @@ public class Order extends AbstractEntity {
     }
 
     public void setItems(Set<ItemOrder> items) {
+        this.items = items;
+    }
+
+    public void addItems(Set<ItemOrder> items) {
+        if (this.items == null) {
+            this.items = new HashSet<>();
+        }
+        for (ItemOrder itemOrder : items) {
+            itemOrder.setOrder(this);
+        }
         this.items = items;
     }
 }
