@@ -1,6 +1,8 @@
 
 # Installing the Zookeper and Kafka server:
     https://dzone.com/articles/running-apache-kafka-on-windows-os
+# Implementing kafka producer and consumer:
+    https://dzone.com/articles/kafka-with-spring-cloud-stream
 
 # To start the application follow the steps above:
     1 - Start the zookeper server in the CMD with the command above:
@@ -15,7 +17,7 @@
         3.2 - ./kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic microservices-java
 
 
-    1 - Start the DiscoveryApplication.java class;
-    2 - Start the GatewayApplication.java class;
-    3 - Start the SalesApplication.java class;
-    4 - Start the SalesDeliveryApplication.java class;
+    4 - Start the DiscoveryApplication.java class;
+    5 - Start the GatewayApplication.java class;
+    6 - Start the SalesApplication.java class;
+    7 - Start the SalesDeliveryApplication.java class;
