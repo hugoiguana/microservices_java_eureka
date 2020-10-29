@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8085
 
   # Data Base configuration
 spring:
@@ -25,17 +25,30 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect # The SQL dialect makes Hibernate generate better SQL for the chosen database
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
+      bindings:
+        output:
+          binder: kafka
+          destination: microservices-java
+          group: output-group-1
+          content-type: application/json
 
 eureka:
   instance:
     prefer-ip-address: true
   client:
     service-url:
-      defaultZone: http://localhost:8081/eureka/
+      defaultZone: http://localhost:8082/eureka/
     register-with-eureka: true
 
 endpoint:
   gateway:
     host: localhost
-    port: 8080
+    port: 8081
     sales_delivery: http://${endpoint.gateway.host}:${endpoint.gateway.port}/gateway/delivery/deliveries

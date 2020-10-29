@@ -1,0 +1,93 @@
+{
+	"variables": [],
+	"info": {
+		"name": "microservices_java",
+		"_postman_id": "38b26ace-7ff0-57de-8b69-e4b1e83c2c9b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gatway - Products",
+			"request": {
+				"url": "http://localhost:8081/gateway/sales/products",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Gatway - Sales",
+			"request": {
+				"url": "http://localhost:8081/gateway/sales/sales",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 1,\r\n  \"items\": [\r\n    {\r\n      \"quantity\" : 1,\r\n      \"productId\" : 1\r\n    },\r\n    {\r\n      \"quantity\" : 2,\r\n      \"productId\" : 2\r\n    }\r\n  ],\r\n  \"address\" : {\r\n    \"city\": \"Lisbon\",\r\n    \"street\": \"Street A\",\r\n    \"houseNumber\": \"13\"\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/deliveries",
+			"request": {
+				"url": "http://localhost:8084/deliveries",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8084/deliveries",
+			"request": {
+				"url": "http://localhost:8084/deliveries",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"orderId\": 1,\r\n  \"address\" : {\r\n    \"city\": \"Lisbon\",\r\n    \"street\": \"Street A\",\r\n    \"houseNumber\": \"13\"\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/sales",
+			"request": {
+				"url": "http://localhost:8083/sales",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerId\": 1,\r\n  \"items\": [\r\n    {\r\n      \"quantity\" : 1,\r\n      \"productId\" : 1\r\n    },\r\n    {\r\n      \"quantity\" : 2,\r\n      \"productId\" : 2\r\n    }\r\n  ],\r\n  \"address\" : {\r\n    \"city\": \"Lisbon\",\r\n    \"street\": \"Street A\",\r\n    \"houseNumber\": \"13\"\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

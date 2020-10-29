@@ -1,0 +1,21 @@
+
+# Installing the Zookeper and Kafka server:
+    https://dzone.com/articles/running-apache-kafka-on-windows-os
+
+# To start the application follow the steps above:
+    1 - Start the zookeper server in the CMD with the command above:
+    zkserver
+    2 - Start the kafka server following those steps above:
+        2.1 - go to Kafka directory installation - EX: 'C:\kafka_2.11-0.9.0.0' - and open a CMD prompt;
+        2.2 - Execute:
+            2.2.1 ./gradlew jarAll
+            2.2.2 .\bin\windows\kafka-server-start.bat .\config\server.properties
+    3 - Create a topic:
+        3.1 - Open the directory in CMD 'C:\kafka_2.13-2.6.0\bin\windows';
+        3.2 - ./kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic microservices-java
+
+
+    1 - Start the DiscoveryApplication.java class;
+    2 - Start the GatewayApplication.java class;
+    3 - Start the SalesApplication.java class;
+    4 - Start the SalesDeliveryApplication.java class;
